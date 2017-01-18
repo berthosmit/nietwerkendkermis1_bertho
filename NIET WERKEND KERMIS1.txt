@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class Kermisopbouw {
+
+	public static void main(String[] args) {
+		Kassa kermis = new Kassa();
+		kermis.kassadraaien();
+	}
+}
+
+class Kassa {
+	void kassadraaien() {
+		int aantalAttracties = 2;						// hier wordt het aantal attracties voor de array bepaald
+		Attractie[] attracties = new Attractie[aantalAttracties];  		// dit is array voor alle attracties
+		Eindespel einde = new Eindespel();
+		Scanner startKermis = new Scanner(System.in);
+		System.out.println("Als u naar de kermis wilt, toets 1. Wilt u de kermis verlaten, toets 0.");
+		int start = startKermis.nextInt();
+		while (start > 1) {
+			System.out.println("Sorry joh, keuze " + start + " is ongeldig. Maak je keuze opnieuw. 1 om te beginnen, 0 om te stoppen.");
+			start = startKermis.nextInt();
+		}
+		if (start == 1) {
+			System.out.println("OK, we gaan beginnen.");	
+		} else Eindespel(); {			                            	// als start == 0 dan moet einde spel lukt niet
+		}
+
+		attracties[0] = new Botsauto();						// het vullen van array veld met adres
+		attracties[1] = new Spin();
+
+		}
+	}
+}
+
+class Attractie {
+	double entree;
+	String naam;
+	int aantalDeelnemers;
+}
+
+class Botsauto extends Attractie {
+	Botsauto() { 			// constructor om de waarde van de entree prijs te vullen
+		entree = 3.2;
+		naam = "Botsauto";
+	}
+}
+
+class Spin extends Attractie {
+	Spin() { 			// constructor om de waarde van de entree prijs te vullen
+		entree = 33.2;
+		naam = "Spin";
+	}
+}
+
+class Eindespel {
+	Eindespel() { 			// constructor eindespel te forceren WERKT NIET
+		System.out.println("No worries.");
+	}
+}
